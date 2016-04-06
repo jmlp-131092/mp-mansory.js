@@ -1,0 +1,34 @@
+{
+  "name": "mp-mansory.js",
+  "version": "1.0.0",
+  "description": "easy jquery plugin to create mansory galleries with bootstrap gryd-system",
+  "main": "mp.mansory.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmlp-131092/mp-mansory.js.git"
+  },
+  "keywords": [
+    "jquery",
+    "gallery",
+    "mansory",
+    "grid-system",
+    "grid",
+    "bootstrap",
+    "twitter",
+    "bootstrap",
+    "javascript"
+  ],
+  "author": "jmlp.131092",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmlp-131092/mp-mansory.js/issues"
+  },
+  "homepage": "https://github.com/jmlp-131092/mp-mansory.js#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-dist": "0.0.6"
+  }
+}
