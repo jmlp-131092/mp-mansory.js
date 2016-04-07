@@ -4,7 +4,7 @@ jquery plugin to create mansory galleries with twitter bootstrap grid systyem
 
 #Options
 
-breakpoints:\n
+breakpoints:
 	lg: 4 //default
 	md: 4 //default
 	sm: 4 //default
