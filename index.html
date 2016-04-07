@@ -3,66 +3,161 @@
 <head>
 	<meta charset="utf-8">
 	<title>mp-mansory.js</title>
-	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+	<link rel="stylesheet" type="text/css" href="src/style.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="src/js/mp.mansory.min.js"></script>
+	<script type="text/javascript" src="src/mp.mansory.js"></script>
+	<style type="text/css">
+	.item {
+		width: 100%;
+		min-height: 100px;
+		background-color: #dedede;
+		padding: 5px;
+		margin: 7px 0px;
+		box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+	}
+
+	.item.h150{
+		width: 100%;
+		min-height: 150px;
+		background-color: #dedede;
+	}
+
+	.item.h200{
+		width: 100%;
+		min-height: 200px;
+		background-color: #dedede;
+	}
+
+	.item.h250{
+		width: 100%;
+		min-height: 200px;
+		background-color: #dedede;
+	}
+	.padding {
+		padding:7px;
+	}
+	</style>
 </head>
 <body>
-<div class="fixed top"><h2>mp-mansory.js</h2></div>
-	<div class="container">
 
-		<div class="row" id="my-gallery-container">
+	<div class="container">
+		<h1>mp-mansory.js</h1>
+		<div class="" id="my-gallery-container">
 			<div class="item">
-				<img src="" width="100%" class="responsive-img">
+				
+			</div>
+			<div class="item h200">
+				
+			</div>
+			<div class="item h250">
+				
+			</div>
+			<div class="item h150">
+				
+			</div>
+			<div class="item h100">
+				
 			</div>
 			<div class="item">
-				<img src="" width="100%" class="responsive-img">
+				
+			</div>
+			<div class="item h200">
+				
+			</div>
+			<div class="item h150">
+				
+			</div>
+			<div class="item h100">
+				
 			</div>
 			<div class="item">
-				<img src="" width="100%" class="responsive-img">
+				
+			</div>
+			<div class="item h200">
+				
+			</div>
+			<div class="item h150">
+				
+			</div>
+			<div class="item h100">
+				
 			</div>
 			<div class="item">
-				<img src="" width="100%" class="responsive-img">
+				
+			</div>
+			<div class="item h200">
+				
+			</div>
+			<div class="item h150">
+				
+			</div>
+			<div class="item h150">
+				
+			</div>
+			<div class="item h100">
+				
 			</div>
 			<div class="item">
-				<img src="" width="100%" class="responsive-img">
+				
 			</div>
-			<div class="item">
-				<img src="" width="100%" class="responsive-img">
+			<div class="item h200">
+				
 			</div>
-			<div class="item">
-				<img src="" width="100%" class="responsive-img">
+			<div class="item h250">
+				
+			</div><div class="item h200">
+				
 			</div>
-			<div class="item">
-				<img src="" width="100%" class="responsive-img">
-			</div>
-			<div class="item">
-				<img src="" width="100%" class="responsive-img">
+			<div class="item h200">
+				
 			</div><div class="item">
-				<img src="" width="100%" class="responsive-img">
+				
+			</div>
+			<div class="item h150">
+				
+			</div>
+			<div class="item h100">
+				
 			</div>
 			<div class="item">
-				<img src="" width="100%" class="responsive-img">
+				
+			</div>
+			<div class="item h200">
+				
+			</div>
+			<div class="item h150">
+				
 			</div><div class="item">
-				<img src="" width="100%" class="responsive-img">
+				
+			</div>
+			<div class="item h150">
+				
 			</div>
 			<div class="item">
-				<img src="" width="100%" class="responsive-img">
-			</div><div class="item">
-				<img src="" width="100%" class="responsive-img">
-			</div>
-			<div class="item">
-				<img src="" width="100%" class="responsive-img">
-			</div><div class="item">
-				<img src="" width="100%" class="responsive-img">
+				
 			</div>
 
 		</div>
 
 
 	</div>
-
+	<script type="text/javascript">
+		jQuery(document).ready(function ( $ ) {
+			$("#my-gallery-container").mpmansory(
+				{
+					childrenClass: 'item',
+					columnClasses: 'padding',
+					breakpoints:{
+						lg: 3, 
+						md: 3, 
+						sm: 4,
+						xs: 6
+					}
+				}
+			);
+		});
+	</script>
 </body>
 </html>

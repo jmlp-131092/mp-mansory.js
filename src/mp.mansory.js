@@ -16,16 +16,21 @@
 			
 		}, options);
 
+		Array.min = function( array ){
+		    return Math.min.apply( Math, array );
+		};
 
-		$.fn.initialize = function (columns, classStr) {
+		$.fn.initialize = function ( columns, classStr ) {
 			/*
-			 * @params [int] {columns} - number of grid columns
 			 * @params [string] {classStr} - the bootstrap column string
+			 * @return [Array] - list of columns to create
 			 * @description - creates the grid columns in wich the items will be distributed
 			 */
+			var wrappers = new Array();
 			for (var i = 0; i<columns; i++) {
 				
-				var wrap = $('<div></div>').addClass(classStr);
+				var wrap = $('<div></div>');
+				wrap.addClass(classStr);
 				$(this).append(wrap);
 				wrappers.push(wrap);
 			
@@ -50,12 +55,15 @@
 				for (var i = 0; i<wrappers.length; i++ ) {
 
 					//get the wrappers height
-					$heigths.push(wrappers[i].heigth());
+					
+					$heights.push(wrappers[i].height());
 
 				}
 
 				//get the wrapper with the lowest height
-				wrappers[$heights.indexOf(min($heights))].append(items[k]);
+			
+				console.log(Array.min($heights));
+				wrappers[$heights.indexOf(Array.min($heights))].append(items[k]);
 	
 			}
 
@@ -66,14 +74,14 @@
 
 			var _this = $(this);
 			
-			var items = _this.children( (setttings.childrenClass != '' ? '.'+settings.childrenClass : 'div') ); //get the items
+			var items = _this.children( (settings.childrenClass != '' ? '.'+settings.childrenClass : 'div') ); //get the items
 
-			var columns = settings.breakpoints.lg / 12; //find number of columns
+			var columns = 12 / settings.breakpoints.lg; //find number of columns
 
 			//build the bootstrap class string
-			var classStr = "col-lg-" + settings.breakpoints.lg + " col-md-"+settings.breakpoints.md + " col-sm-" + settings.breakpoints.sm + "col-xs-" + settings.breakpoints.xs;
+			var classStr = "col-lg-" + settings.breakpoints.lg + " col-md-"+settings.breakpoints.md + " col-sm-" + settings.breakpoints.sm + " col-xs-" + settings.breakpoints.xs + " " + settings.columnClasses;
 
-			var wrappers = $(this).initialize( columns ); //create columns
+			var wrappers = $(this).initialize( columns, classStr ); //create columns
 
 			_this.distributeItems( wrappers, items); //apply mansory
 
