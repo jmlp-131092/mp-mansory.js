@@ -118,7 +118,7 @@
 
 		}
 
-		$.fn.distributeItemsByAttr = function ( wrappers, items, order) {
+		$.fn.orderItemsByAttr = function (items, order) {
 
 			var attrs = new Array();
 			for ( var k = 0; k<items.length; k++ ) {
@@ -131,31 +131,32 @@
 				attrs.sort(function (a, b) { return b-a });
 			}
 
-			
-			console.log(attrs);
 			var ordered_items = new Array();
 
 			for ( var i = 0; i<attrs.length; i++) {
-				var item = $(this).children('['+order.attr+'='+attrs[i]+']');
+				var item = $.grep(items, function (e) {return $(e).attr(order.attr) == attrs[i]});
 				ordered_items.push(item);
 			}
-			
+			return ordered_items;
+		}
+
+		$.fn.distributeItemsByAttr = function ( wrappers, items, order) {
+
 			var counter = 0;
 			var counter2 = 0;
-			for (var k = 0; k<ordered_items.length; k++) {
-				if (counter == wrappers.length) counter = 0;	
-					if ( ordered_items[k].length > 1 ) {
-						wrappers[counter].append(ordered_items[k][counter2]);
-						counter2++;
-					} else {
-						wrappers[counter].append(ordered_items[k]);
-					}
-					
-				
-				counter++;
-			}
 
-			
+			for (var i = 0; i<items.length; i++) {
+				
+				if (counter == wrappers.length) counter = 0;
+				if ( items[i].length > 1) {
+					if (counter2 == items[i].length) counter2 = 0; 
+					wrappers[counter].append($(items[i][counter2]));
+					counter2++;
+				} else {
+					wrappers[counter].append($(items[i]));	
+				}
+				counter++;
+			}	
 		}
 
 		$.fn.apply = function ( settings, nrOfColumns, wrappers, items ) {
@@ -169,19 +170,16 @@
 			//build the bootstrap class string
 			var classStr = "col-lg-" + settings.breakpoints.lg + " col-md-"+settings.breakpoints.md + " col-sm-" + settings.breakpoints.sm + " col-xs-" + settings.breakpoints.xs + " " + settings.columnClasses;
 
-			wrappers = $(this).initialize( columns, classStr ); //create columns
+			wrappers = $(this).initialize( columns, classStr ); //create columns'white
 
 			if ( settings.distributeBy.order ) {
-				_this.distributeItemsByOrder( wrappers, items); //apply mansory
-				
+				_this.distributeItemsByOrder( wrappers, items); //apply mansory		
 			} else if ( settings.distributeBy.height ) {
 				_this.distributeItemsByHeight( wrappers, items); //apply mansory
 			} else if ( settings.distributeBy.attr ) {
-				console.log('byAttr'),
-				_this.distributeItemsByAttr( wrappers, items, settings.distributeBy);
+				_this.distributeItemsByAttr( wrappers, _this.orderItemsByAttr(items, settings.distributeBy), settings.distributeBy);
 			}
-
-			return wrappers;
+			return { wrappers: wrappers, items: items };
 		}
 
 
@@ -198,15 +196,17 @@
 
 			var wrappers = new Array();
 
-			wrappers = _this.apply( settings, numberOfColumns, wrappers, items );
+			var returns = _this.apply( settings, numberOfColumns, wrappers, items );
 			
+			wrappers = returns.wrappers;
+
 			$(window).on('resize', function ( e ) {
 
 				if (_this.getCurrentColumnSize() != currentSize ) {
-
 					numberOfColumns = 12 / settings.breakpoints[_this.getCurrentColumnSize()];
 					wrappers = $.emptyArray(wrappers);
-					wrappers = _this.apply( settings , numberOfColumns, wrappers, items);
+					returns = _this.apply( settings , numberOfColumns, wrappers, items);
+					wrappers = returns.wrappers;
 					currentSize = _this.getCurrentColumnSize();
 
 				}

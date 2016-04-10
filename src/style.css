@@ -1,11 +1,10 @@
 body {
-	
 }
 h1 {
 	color: white;
 	text-shadow: rgba(0, 0, 0, 0.8) 0px 1px 2px;
 	font-size: 52px;
-	background-color: #0098ca;
+	background-color: white;
 	box-sizing: content-box;
 	width: 340px;
 	padding: 0px 20px 7px 20px;
@@ -20,14 +19,15 @@ p {
 	color: #4d4d4d;
 }
 .item {
-	border: #ccc 1px solid;
+	border: #c6c6c6 2px solid;
 	width: 100%;
+	background-color: white;
 	min-height: 100px;
-	background-color: #dedede;
 	padding: 5px;
 	margin: 10px 0px;
 	box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 2px;
-	border-radius: 4px;
+	border-radius: 4px;,
+	
 }
 
 .item:hover {
@@ -39,19 +39,17 @@ p {
 .item.h150{
 	width: 100%;
 	min-height: 150px;
-	background-color: #dedede;
 }
 
 .item.h200{
 	width: 100%;
 	min-height: 200px;
-	background-color: #dedede;
+
 }
 
 .item.h250{
 	width: 100%;
 	min-height: 200px;
-	background-color: #dedede;
 }
 .padding{
 	padding: 10px 5px;
