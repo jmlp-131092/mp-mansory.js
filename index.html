@@ -2,12 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>mp-mansory.js</title>
+	<title>mp-mansory.js - bootstrap mansory - javascript</title>
 	
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="src/mp.mansory.min.js"></script>
+	<script type="text/javascript" src="src/mp.mansory.js"></script>
 	<link rel="stylesheet" type="text/css" href="src/style.css">
 </head>
 <body>
@@ -15,98 +15,101 @@
 	<div class="container">
 		<h1>mp-mansory.js</h1>
 		<div class="" id="my-gallery-container">
-			<div class="item">
-				
+			<div class="item" data-order="1">
+				<p>item 0</p>
 			</div>
-			<div class="item h200">
-				
+			<div class="item h200" data-order="2">
+				<p>item 1</p>
 			</div>
-			<div class="item h250">
-				
+			<div class="item h250" data-order="4">
+				<p>item 2</p>
 			</div>
-			<div class="item h150">
-			
+			<div class="item h150" data-order="5">
+				<p>item 3</p>
 			</div>
-			<div class="item h100">
-				
+			<div class="item h100" data-order="6"
+				<p>item 4</p>
 			</div>
-			<div class="item">
-			
+			<div class="item" data-order="3">
+				<p>item 5</p>
 			</div>
-			<div class="item h200">
-				
+			<div class="item h200" data-order="10">
+				<p>item 6</p>
 			</div>
-			<div class="item h150">
-				
+			<div class="item h150" data-order="1">
+				<p>item 7</p>
 			</div>
-			<div class="item h100">
-				
+			<div class="item h100" data-order="1">
+				<p>item 8</p>
 			</div>
-			<div class="item">
-				
+			<div class="item" data-order="1">
+				<p>item 9</p>
 			</div>
-			<div class="item h200">
-				
+			<div class="item h200" data-order="1">
+				<p>item 10</p>
 			</div>
-			<div class="item h150">
-				
+			<div class="item h150" data-order="1">
+				<p>item 11</p>
 			</div>
-			<div class="item h100">
-				
+			<div class="item h100" data-order="1">
+				<p>item 12</p>
 			</div>
-			<div class="item">
-			
+			<div class="item" data-order="1">
+				<p>item 13</p>
 			</div>
-			<div class="item h200">
-			
+			<div class="item h200" data-order="1">
+				<p>item 14</p>
 			</div>
-			<div class="item h150">
-				
+			<div class="item h150" data-order="1">
+				<p>item 15</p>
 			</div>
-			<div class="item h150">
-				
+			<div class="item h150" data-order="1">
+				<p>item 16</p>
 			</div>
-			<div class="item h100">
-				
+			<div class="item h100" data-order="1">
+				<p>item 17</p>
 			</div>
-			<div class="item">
-				
+			<div class="item" data-order="1">
+				<p>item 18</p>
 			</div>
-			<div class="item h200">
-				
+			<div class="item h200" data-order="1">
+				<p>item 19</p>
 			</div>
-			<div class="item h250">
-				
-			</div><div class="item h200">
-				
+			<div class="item h250" data-order="1">
+				<p>item 20</p>
 			</div>
-			<div class="item h200">
-				
-			</div><div class="item">
-				
+			<div class="item h200" data-order="1">
+				<p>item 21</p>
 			</div>
-			<div class="item h150">
-				
+			<div class="item h200" data-order="1">
+				<p>item 22</p>
 			</div>
-			<div class="item h100">
-				
+			<div class="item" data-order="1">
+				<p>item 23</p>
 			</div>
-			<div class="item">
-				
+			<div class="item h150" data-order="1">
+				<p>item 24</p>
 			</div>
-			<div class="item h200">
-				
+			<div class="item h100" data-order="1">
+				<p>item 25</p>
 			</div>
-			<div class="item h150">
-				
-			</div><div class="item">
-				
+			<div class="item" data-order="1">
+				<p>item 26</p>
 			</div>
-			<div class="item h150">
-				
+			<div class="item h200" data-order="1">
+				<p>item 27</p>
 			</div>
-			<div class="item">
-				
+			<div class="item h150" data-order="1">
+				<p>item 28</p>
+			</div>
+			<div class="item" data-order="1">
+				<p>item 29</p>
+			</div>
+			<div class="item h150" data-order="1">
+				<p>item 30</p>
+			</div>
+			<div class="item" data-order="1">
+				<p>item 31</p>
 			</div>
 
 		</div>
@@ -117,18 +120,18 @@
 		jQuery(document).ready(function ( $ ) {
 			$("#my-gallery-container").mpmansory(
 				{
-					childrenClass: 'item',
-					columnClasses: 'padding',
+					childrenClass: 'item', // default is a div
+					columnClasses: 'padding', //add classes to items
 					breakpoints:{
-						lg: 2, 
+						lg: 3, 
 						md: 4, 
 						sm: 6,
 						xs: 12
 					},
-					distributeBy: 'order',
+					distributeBy: { attr: 'data-order', attrOrder:'desc' }, //default distribute by order, options => order: true/false, height: true/false
 					onload: function (items) {
 						items.each( function (index, element) {
-							$(this).css({backgroundColor: 'rgba(190, 80, '+(10 * index)+', 1)'});
+							//execute something on items after loaded
 						});
 					} 
 				}
