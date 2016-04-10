@@ -23,7 +23,6 @@
 		$.emptyArray = function ( array ) {
 			for (var i = 0; i<array.length; i++) {
 				array[i].remove();
-				console.log("removed");
 			}
 
 			return new Array();
@@ -135,15 +134,6 @@
 
 			_this.distributeItemsByHeight( wrappers, items); //apply mansory
 
-			
-
-			if (settings.hasOwnProperty('onload')) {
-
-				//execute on load
-				settings.onload( items );
-
-			}
-
 			return wrappers;
 		}
 
@@ -173,6 +163,13 @@
 				}
 
 			});
+
+			if (settings.hasOwnProperty('onload')) {
+
+				//execute on load
+				settings.onload( items );
+
+			}
 
 		});
 	}
