@@ -26,6 +26,15 @@ Feel free to request new features.
 	}
 
 
+#Why i made this
+
+I made this because I'm a javascript, jQuery and Bootstrap lover who cant stand complex CSS hackings and also because StackOverflow didn't help me resolving this issue.
+
+#Why am I sharing this
+
+Like it is helpfull for me, it can be helpfull for you
+
+
 #How does it works
 
 Based on the window size and the the breakpoints values passed as argument it calculates the number of columns needed and creates them as div elements with col-(viewport_slug)-(viewport_slug_value) class (you can add custom classes with the property 'columnClasses'). It repeats the same process when a breakpoint is reached.
