@@ -5,20 +5,26 @@ jquery plugin to create mansory galleries with twitter bootstrap grid systyem
 Feel free to request new features.
 
 #Options
+	{
+		itemClasses: '', //add classes to items
+		columnClasses: '', //add classes to columns
+		breakpoints: {
+			lg: 4, //default
+			md: 4, //default
+			sm: 6, //default
+			xs: 12, //default
+		},
+		distributeBy: {
+			order: false, // if true distribute items by default order 
+			height: false, // if true distribute items to the column with the lowest height,
+			attr: 'data-order', // Distribute items by attribute value,
+			attrOrder: 'asc'/'desc' // Only applied if is used 'attr' property, order items in ascending or descending order
+		},
+		onload: function ( items ) {
+			//do something with the items
+		}
+	}
 
-breakpoints:
-	lg: 4 //default
-	md: 4 //default
-	sm: 6 //default
-	xs: 12 //default
-
-distributeBy:
-	order: false/true, //distribute items by writing order
-	height: false, //distribute items by columns with lower height
-	attr: 'data-order' //distribute items by attribute value
-	attrOrder: 'asc'/'desc' //distribute items by attribute value in ascending or descending order
-
-onload: function ( items )
 
 #How does it works
 
